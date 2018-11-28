@@ -11,4 +11,4 @@ run ()
     done
 }
 
-run_benchmark run
+run_benchmark run "cpu"
