@@ -1,3 +1,4 @@
+from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import requests
@@ -10,6 +11,11 @@ class Prometheus:
     def plot_metric(self, query: str, start_time: int, end_time: int, step_seconds: int) -> None:
         for values in self._get_values_for_query(query, start_time, end_time, step_seconds):
             self._plot_tuple_list(values)
+
+    @staticmethod
+    def timestamp_to_string(timestamp):
+        dt = datetime.fromtimestamp(timestamp)
+        return dt.strftime("%c")
 
     def _get_values_for_query(self, query, start_time, end_time, step_seconds):
         response = self._get_series(query, start_time, end_time, step_seconds)
@@ -29,7 +35,16 @@ class Prometheus:
         x, y = self._tuple_list_to_two_lists(xy)
         y_fit = self._get_poly_fit(x, y)
         plt.plot(x, y, x, y_fit)
+        x_ticks_step_size = len(x) // 10
+        plt.xticks(x[::x_ticks_step_size],
+                   [self._timestamp_to_time_string(ts) for ts in x[::x_ticks_step_size]],
+                   rotation=45)
         plt.show()
+
+    @staticmethod
+    def _timestamp_to_time_string(timestamp):
+        dt = datetime.fromtimestamp(timestamp)
+        return dt.strftime("%H:%M:%S")
 
     @staticmethod
     def _get_values_from_metric(metrics):
