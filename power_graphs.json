@@ -1,19 +1,4 @@
 {
-  "__inputs": [],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "5.4.0"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": "5.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -30,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -336,9 +321,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_ipmi_power_watts",
+          "expr": "ipmi_dcmi_power_consumption_watts",
           "format": "time_series",
           "intervalFactor": 1,
+          "legendFormat": "IPMI",
           "refId": "A"
         }
       ],
@@ -365,8 +351,8 @@
           "format": "watt",
           "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
+          "max": "500",
+          "min": "0",
           "show": true
         },
         {
@@ -384,7 +370,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -392,8 +378,8 @@
     "list": []
   },
   "time": {
-    "from": "2018-12-05T06:10:27.845Z",
-    "to": "2018-12-05T18:10:27.845Z"
+    "from": "now-15m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -423,5 +409,5 @@
   "timezone": "",
   "title": "PowerGraphs",
   "uid": "vRzNSiEik",
-  "version": 5
+  "version": 7
 }
