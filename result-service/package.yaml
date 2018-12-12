@@ -24,6 +24,8 @@ dependencies:
 - scotty
 - aeson
 - http-types
+- mtl
+- bytestring
 
 library:
   source-dirs: src
