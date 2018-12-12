@@ -7,33 +7,36 @@ import Data.Monoid ((<>))
 import Data.Aeson (FromJSON, ToJSON)
 import GHC.Generics
 import Web.Scotty
+import Network.HTTP.Types (status200)
 
-data User = User { userId :: Int, userName :: String } deriving (Show, Generic)
-instance ToJSON User
-instance FromJSON User
+data Benchmark = Benchmark { name :: String, start :: String, end :: String } deriving (Show, Generic)
+instance ToJSON Benchmark
+instance FromJSON Benchmark
 
-bob :: User
-bob = User { userId = 1, userName = "bob" }
+benchmarkA :: Benchmark
+benchmarkA = Benchmark { name = "Benchmark A", start = "1", end = "2" }
+benchmarkB :: Benchmark
+benchmarkB = Benchmark { name = "Benchmark B", start = "1", end = "2" }
 
-jenny :: User
-jenny = User { userId = 2, userName = "jenny" }
+allBenchmarks :: [Benchmark]
+allBenchmarks = [benchmarkA, benchmarkB]
 
-allUsers :: [User]
-allUsers = [bob, jenny]
+getBenchmarks :: ActionM ()
+getBenchmarks = do
+  json allBenchmarks
 
-matchesId :: Int -> User -> Bool
-matchesId id user = userId user == id
+addBenchmark :: ActionM ()
+addBenchmark = do
+  name <- param "name" :: ActionM String
+  start <- param "start" :: ActionM String
+  end <- param "end" :: ActionM String
+  status status200
+
+routes :: ScottyM ()
+routes = do
+  get "/benchmarks" getBenchmarks
+  get "/benchmarks/add" addBenchmark
 
 main = do
   putStrLn "Starting Server..."
-  scotty 3000 $ do
-    get "/hello/:name" $ do
-        name <- param "name"
-        text ("hello " <> name <> "!")
-
-    get "/users" $ do
-      json allUsers
-
-    get "/users/:id" $ do
-      id <- param "id"
-      json (filter (matchesId id) allUsers)
+  scotty 3000 routes
