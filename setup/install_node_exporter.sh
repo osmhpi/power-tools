@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+set -e
+
+# Install dependencies
+apt-get install curl tar
+
 # Create user
 useradd --no-create-home --shell /bin/false node_exporter
 
