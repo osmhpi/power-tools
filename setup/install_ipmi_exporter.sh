@@ -4,7 +4,8 @@
 apt-get install freeipmi
 
 # Copy scripts
-cp ./ipmi_exporter /usr/local/bin
+mkdir /usr/local/ipmi_exporter
+cp ./ipmi_exporter/* /usr/local/ipmi_exporter
 cp ./systemd/ipmi_exporter.service /etc/systemd/system/
 
 # Start service

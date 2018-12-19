@@ -1,3 +1,3 @@
 #!/bin/sh
-/usr/local/bin/ipmi_exporter -config.file /etc/prometheus/exporter/ipmi.yml
+/usr/local/ipmi_exporter/ipmi_exporter -config.file /usr/local/ipmi_exporter/ipmi.yml
 
