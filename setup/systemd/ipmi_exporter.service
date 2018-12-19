@@ -7,7 +7,7 @@ After=network-online.target
 User=root
 Group=root
 Type=simple
-ExecStart=/usr/local/bin/ipmi_exporter/ipmi_exporter.sh
+ExecStart=/usr/local/ipmi_exporter/ipmi_exporter.sh
 
 [Install]
 WantedBy=multi-user.target
