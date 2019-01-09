@@ -16,8 +16,194 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
+  "iteration": 1547042415981,
   "links": [],
   "panels": [
+    {
+      "columns": [
+        {
+          "text": "Avg",
+          "value": "avg"
+        },
+        {
+          "text": "Min",
+          "value": "min"
+        },
+        {
+          "text": "Max",
+          "value": "max"
+        },
+        {
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": "Prometheus",
+      "fontSize": "120%",
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 30,
+      "interval": "",
+      "links": [],
+      "pageSize": 50,
+      "repeat": null,
+      "repeatDirection": "h",
+      "scroll": false,
+      "showHeader": true,
+      "sort": {
+        "col": null,
+        "desc": false
+      },
+      "styles": [
+        {
+          "alias": "",
+          "colorMode": "row",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 0,
+          "link": false,
+          "mappingType": 1,
+          "pattern": "Avg",
+          "thresholds": [
+            "400",
+            "700"
+          ],
+          "type": "number",
+          "unit": "watt"
+        },
+        {
+          "alias": "Server IP",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Metric",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 0,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "number",
+          "unit": "watt"
+        }
+      ],
+      "targets": [
+        {
+          "expr": "ipmi_dcmi_power_consumption_watts",
+          "format": "time_series",
+          "hide": false,
+          "instant": false,
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Power Heatmap",
+      "transform": "timeseries_aggregations",
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "content": "<h2 style=\"text-align:center;\">$server_list</h2>",
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 0,
+        "y": 6
+      },
+      "id": 18,
+      "links": [],
+      "mode": "html",
+      "repeat": "server_list",
+      "repeatDirection": "h",
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.23",
+          "value": "192.168.42.23"
+        }
+      },
+      "title": "Server IP",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "content": "<h2 style=\"text-align:center;\">$server_list</h2>",
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 8,
+        "y": 6
+      },
+      "id": 31,
+      "links": [],
+      "mode": "html",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 18,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.54",
+          "value": "192.168.42.54"
+        }
+      },
+      "title": "Server IP",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "content": "<h2 style=\"text-align:center;\">$server_list</h2>",
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 16,
+        "y": 6
+      },
+      "id": 32,
+      "links": [],
+      "mode": "html",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 18,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.56",
+          "value": "192.168.42.56"
+        }
+      },
+      "title": "Server IP",
+      "transparent": true,
+      "type": "text"
+    },
     {
       "aliasColors": {},
       "bars": false,
@@ -26,9 +212,292 @@
       "fill": 1,
       "gridPos": {
         "h": 9,
-        "w": 12,
+        "w": 8,
         "x": 0,
-        "y": 0
+        "y": 8
+      },
+      "id": 6,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": "server_list",
+      "repeatDirection": "h",
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.23",
+          "value": "192.168.42.23"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server_list:.*\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Power Consumption (IPMI)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "watt",
+          "label": null,
+          "logBase": 1,
+          "max": "1000",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 8,
+        "y": 8
+      },
+      "id": 33,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 6,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.54",
+          "value": "192.168.42.54"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server_list:.*\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Power Consumption (IPMI)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "watt",
+          "label": null,
+          "logBase": 1,
+          "max": "1000",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 16,
+        "y": 8
+      },
+      "id": 34,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 6,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.56",
+          "value": "192.168.42.56"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server_list:.*\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Power Consumption (IPMI)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "watt",
+          "label": null,
+          "logBase": 1,
+          "max": "1000",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 0,
+        "y": 17
       },
       "id": 8,
       "legend": {
@@ -48,16 +517,26 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "repeat": "server_list",
+      "repeatDirection": "h",
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.23",
+          "value": "192.168.42.23"
+        }
+      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_load1 / scalar(count(node_cpu_frequency_hertz)) * 100",
+          "expr": "node_load1{instance=~\"$server_list:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})) * 100",
           "format": "time_series",
+          "hide": false,
           "intervalFactor": 1,
-          "legendFormat": "CPU Load",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -110,9 +589,201 @@
       "fill": 1,
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 0
+        "w": 8,
+        "x": 8,
+        "y": 17
+      },
+      "id": 35,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 8,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.54",
+          "value": "192.168.42.54"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "node_load1{instance=~\"$server_list:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})) * 100",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Load",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 16,
+        "y": 17
+      },
+      "id": 36,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 8,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.56",
+          "value": "192.168.42.56"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "node_load1{instance=~\"$server_list:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})) * 100",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Load",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 0,
+        "y": 26
       },
       "id": 4,
       "legend": {
@@ -132,16 +803,25 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "repeat": "server_list",
+      "repeatDirection": "h",
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.23",
+          "value": "192.168.42.23"
+        }
+      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(node_cpu_frequency_hertz)",
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "All CPUs",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -194,9 +874,199 @@
       "fill": 1,
       "gridPos": {
         "h": 9,
-        "w": 12,
+        "w": 8,
+        "x": 8,
+        "y": 26
+      },
+      "id": 37,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.54",
+          "value": "192.168.42.54"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Average CPU Clock Frequency",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "hertz",
+          "label": null,
+          "logBase": 1,
+          "max": "3500000000",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 16,
+        "y": 26
+      },
+      "id": 38,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.56",
+          "value": "192.168.42.56"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Average CPU Clock Frequency",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "hertz",
+          "label": null,
+          "logBase": 1,
+          "max": "3500000000",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
         "x": 0,
-        "y": 9
+        "y": 35
       },
       "id": 2,
       "legend": {
@@ -216,20 +1086,29 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "repeat": "server_list",
+      "repeatDirection": "h",
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.23",
+          "value": "192.168.42.23"
+        }
+      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*'})",
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Min Temp",
           "refId": "A"
         },
         {
-          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*'})",
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -237,7 +1116,7 @@
           "refId": "B"
         },
         {
-          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*'})",
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Max Temp",
@@ -293,11 +1172,11 @@
       "fill": 1,
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 9
+        "w": 8,
+        "x": 8,
+        "y": 35
       },
-      "id": 6,
+      "id": 39,
       "legend": {
         "avg": false,
         "current": false,
@@ -315,24 +1194,50 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 2,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.54",
+          "value": "192.168.42.54"
+        }
+      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "ipmi_dcmi_power_consumption_watts",
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "IPMI",
+          "legendFormat": "Min Temp",
           "refId": "A"
+        },
+        {
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Avg Temp",
+          "refId": "B"
+        },
+        {
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Max Temp",
+          "refId": "C"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Power Consumption (IPMI)",
+      "title": "CPU Temperature",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -348,10 +1253,120 @@
       },
       "yaxes": [
         {
-          "format": "watt",
+          "format": "celsius",
           "label": null,
           "logBase": 1,
-          "max": "500",
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 16,
+        "y": 35
+      },
+      "id": 40,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1547042415981,
+      "repeatPanelId": 2,
+      "scopedVars": {
+        "server_list": {
+          "selected": false,
+          "text": "192.168.42.56",
+          "value": "192.168.42.56"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Min Temp",
+          "refId": "A"
+        },
+        {
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Avg Temp",
+          "refId": "B"
+        },
+        {
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Max Temp",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Temperature",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "celsius",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
           "min": "0",
           "show": true
         },
@@ -375,10 +1390,37 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "Prometheus",
+        "definition": "query_result(node_load1)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "List of all servers",
+        "multi": true,
+        "name": "server_list",
+        "options": [],
+        "query": "query_result(node_load1)",
+        "refresh": 1,
+        "regex": "/.*instance=\"([^\"]*):\\d{1,5}.*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -409,5 +1451,5 @@
   "timezone": "",
   "title": "PowerGraphs",
   "uid": "vRzNSiEik",
-  "version": 7
+  "version": 44
 }
