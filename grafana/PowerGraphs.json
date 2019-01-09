@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1547042415981,
+  "iteration": 1547049823504,
   "links": [],
   "panels": [
     {
@@ -129,7 +129,7 @@
       "type": "table"
     },
     {
-      "content": "<h2 style=\"text-align:center;\">$server_list</h2>",
+      "content": "<h2 style=\"text-align:center;\">$server</h2>",
       "gridPos": {
         "h": 2,
         "w": 8,
@@ -137,12 +137,22 @@
         "y": 6
       },
       "id": 18,
-      "links": [],
+      "links": [
+        {
+          "dashboard": "PerServer",
+          "keepTime": true,
+          "params": "var-server=$server",
+          "targetBlank": true,
+          "title": "Details",
+          "type": "dashboard",
+          "url": "/d/8WDSH98iz/perserver"
+        }
+      ],
       "mode": "html",
-      "repeat": "server_list",
+      "repeat": "server",
       "repeatDirection": "h",
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.23",
           "value": "192.168.42.23"
@@ -153,7 +163,7 @@
       "type": "text"
     },
     {
-      "content": "<h2 style=\"text-align:center;\">$server_list</h2>",
+      "content": "<h2 style=\"text-align:center;\">$server</h2>",
       "gridPos": {
         "h": 2,
         "w": 8,
@@ -161,14 +171,24 @@
         "y": 6
       },
       "id": 31,
-      "links": [],
+      "links": [
+        {
+          "dashboard": "Per Server",
+          "keepTime": true,
+          "params": "var-server=$server",
+          "targetBlank": true,
+          "title": "Details",
+          "type": "dashboard",
+          "url": "/d/8WDSH98iz/per-server"
+        }
+      ],
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 18,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.54",
           "value": "192.168.42.54"
@@ -179,7 +199,7 @@
       "type": "text"
     },
     {
-      "content": "<h2 style=\"text-align:center;\">$server_list</h2>",
+      "content": "<h2 style=\"text-align:center;\">$server</h2>",
       "gridPos": {
         "h": 2,
         "w": 8,
@@ -187,14 +207,24 @@
         "y": 6
       },
       "id": 32,
-      "links": [],
+      "links": [
+        {
+          "dashboard": "Per Server",
+          "keepTime": true,
+          "params": "var-server=$server",
+          "targetBlank": true,
+          "title": "Details",
+          "type": "dashboard",
+          "url": "/d/8WDSH98iz/per-server"
+        }
+      ],
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 18,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.56",
           "value": "192.168.42.56"
@@ -234,10 +264,10 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "repeat": "server_list",
+      "repeat": "server",
       "repeatDirection": "h",
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.23",
           "value": "192.168.42.23"
@@ -249,7 +279,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server_list:.*\"}",
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.*\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
@@ -329,10 +359,10 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 6,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.54",
           "value": "192.168.42.54"
@@ -344,7 +374,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server_list:.*\"}",
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.*\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
@@ -424,10 +454,10 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 6,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.56",
           "value": "192.168.42.56"
@@ -439,7 +469,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server_list:.*\"}",
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.*\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
@@ -517,10 +547,10 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "repeat": "server_list",
+      "repeat": "server",
       "repeatDirection": "h",
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.23",
           "value": "192.168.42.23"
@@ -532,7 +562,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_load1{instance=~\"$server_list:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})) * 100",
+          "expr": "node_load1{instance=~\"$server:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.*\"})) * 100",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -613,10 +643,10 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 8,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.54",
           "value": "192.168.42.54"
@@ -628,7 +658,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_load1{instance=~\"$server_list:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})) * 100",
+          "expr": "node_load1{instance=~\"$server:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.*\"})) * 100",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -709,10 +739,10 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 8,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.56",
           "value": "192.168.42.56"
@@ -724,7 +754,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_load1{instance=~\"$server_list:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})) * 100",
+          "expr": "node_load1{instance=~\"$server:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.*\"})) * 100",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -803,10 +833,10 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "repeat": "server_list",
+      "repeat": "server",
       "repeatDirection": "h",
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.23",
           "value": "192.168.42.23"
@@ -818,7 +848,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})",
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
@@ -898,10 +928,10 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 4,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.54",
           "value": "192.168.42.54"
@@ -913,7 +943,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})",
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
@@ -993,10 +1023,10 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 4,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.56",
           "value": "192.168.42.56"
@@ -1008,7 +1038,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server_list:.*\"})",
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
@@ -1086,10 +1116,10 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "repeat": "server_list",
+      "repeat": "server",
       "repeatDirection": "h",
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.23",
           "value": "192.168.42.23"
@@ -1101,14 +1131,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Min Temp",
           "refId": "A"
         },
         {
-          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1116,7 +1146,7 @@
           "refId": "B"
         },
         {
-          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Max Temp",
@@ -1196,10 +1226,10 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 2,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.54",
           "value": "192.168.42.54"
@@ -1211,14 +1241,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Min Temp",
           "refId": "A"
         },
         {
-          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1226,7 +1256,7 @@
           "refId": "B"
         },
         {
-          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Max Temp",
@@ -1306,10 +1336,10 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547042415981,
+      "repeatIteration": 1547049823504,
       "repeatPanelId": 2,
       "scopedVars": {
-        "server_list": {
+        "server": {
           "selected": false,
           "text": "192.168.42.56",
           "value": "192.168.42.56"
@@ -1321,14 +1351,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Min Temp",
           "refId": "A"
         },
         {
-          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1336,7 +1366,7 @@
           "refId": "B"
         },
         {
-          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server_list:.*\"})",
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Max Temp",
@@ -1394,21 +1424,20 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
           "text": "All",
           "value": "$__all"
         },
         "datasource": "Prometheus",
-        "definition": "query_result(node_load1)",
+        "definition": "label_values(instance)",
         "hide": 0,
         "includeAll": true,
-        "label": "List of all servers",
+        "label": "List of all Servers",
         "multi": true,
-        "name": "server_list",
+        "name": "server",
         "options": [],
-        "query": "query_result(node_load1)",
+        "query": "label_values(instance)",
         "refresh": 1,
-        "regex": "/.*instance=\"([^\"]*):\\d{1,5}.*/",
+        "regex": "/(.*):\\d{1,5}/",
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
@@ -1451,5 +1480,5 @@
   "timezone": "",
   "title": "PowerGraphs",
   "uid": "vRzNSiEik",
-  "version": 44
+  "version": 77
 }
