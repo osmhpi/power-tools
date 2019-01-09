@@ -1,0 +1,13 @@
+[Unit]
+Description=Ps Exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/ps_exporter
+
+[Install]
+WantedBy=multi-user.target
