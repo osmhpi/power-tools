@@ -7,7 +7,7 @@ After=network-online.target
 User=node_exporter
 Group=node_exporter
 Type=simple
-ExecStart=/usr/local/bin/ps_exporter
+ExecStart=/usr/local/ps_exporter/ps_exporter.sh
 
 [Install]
 WantedBy=multi-user.target
