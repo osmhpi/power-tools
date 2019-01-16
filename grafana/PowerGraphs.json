@@ -279,7 +279,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.*\"}",
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
@@ -562,7 +562,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_load1{instance=~\"$server:.*\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.*\"})) * 100",
+          "expr": "node_load1{instance=~\"$server:.+\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})) * 100",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -1449,7 +1449,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -1480,5 +1480,5 @@
   "timezone": "",
   "title": "PowerGraphs",
   "uid": "vRzNSiEik",
-  "version": 78
+  "version": 81
 }

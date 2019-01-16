@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1547631863023,
+  "iteration": 1547647146457,
   "links": [],
   "panels": [
     {
@@ -39,12 +39,181 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "decimals": null,
       "fill": 1,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 0,
         "y": 3
+      },
+      "id": 16,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "(label_replace(ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}, \"ip\", \"$1\", \"instance\", \"(.*):.+\") - $power_base)\n  * \n  on(ip) \n  group_right() \n(\n  clamp_max( \n    ( \n      sum( \n        label_replace(cpup{instance=~\"$server:.+\"}, \"ip\", \"$1\", \"instance\", \"(.*):.+\")\n      ) by (user, ip)\n      / $cpu_nodes\n    ), 100\n  ) \n  / 100\n)",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{user}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Power Consumption Per User",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "watt",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 3
+      },
+      "id": 14,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"} - $power_base",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Consumption above IDLE",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Consumption above IDLE",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "watt",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 12
       },
       "id": 8,
       "legend": {
@@ -70,7 +239,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum (cpup{instance=~\"$server:.+\"}) by (user)",
+          "expr": "clamp_max(sum (cpup{instance=~\"$server:.+\"}) by (user) / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})), 100)",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{user}}",
@@ -130,7 +299,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 3
+        "y": 12
       },
       "id": 6,
       "legend": {
@@ -216,7 +385,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 12
+        "y": 21
       },
       "id": 12,
       "legend": {
@@ -300,7 +469,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 12
+        "y": 21
       },
       "id": 10,
       "legend": {
@@ -326,7 +495,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "memp{instance=~\"$server:.+\"} > 0.5",
+          "expr": "memp{instance=~\"$server:.+\"} > 5",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{command}} ({{user}})",
@@ -337,7 +506,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Memory per Process (> 5%) TODO!",
+      "title": "Memory per Process (> 5%)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -383,8 +552,8 @@
       "gridPos": {
         "h": 9,
         "w": 12,
-        "x": 0,
-        "y": 21
+        "x": 6,
+        "y": 30
       },
       "id": 2,
       "legend": {
@@ -459,7 +628,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": "30s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -483,11 +652,61 @@
         "query": "192.168.42.23",
         "skipUrlSync": false,
         "type": "textbox"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "86",
+          "value": "86"
+        },
+        "datasource": "Prometheus",
+        "definition": "query_result(min_over_time(ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}[1y]))",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "power_base",
+        "options": [],
+        "query": "query_result(min_over_time(ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}[1y]))",
+        "refresh": 1,
+        "regex": "/\\{instance=\".+\",.+\\} (\\d+)/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "31",
+          "value": "31"
+        },
+        "datasource": "Prometheus",
+        "definition": "query_result(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"}))",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "cpu_nodes",
+        "options": [],
+        "query": "query_result(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"}))",
+        "refresh": 1,
+        "regex": "/\\{.*\\} (\\d+)/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
       }
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -518,5 +737,5 @@
   "timezone": "",
   "title": "PerServer",
   "uid": "8WDSH98iz",
-  "version": 21
+  "version": 29
 }
