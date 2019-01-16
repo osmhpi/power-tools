@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1547049823504,
+  "iteration": 1547631861576,
   "links": [],
   "panels": [
     {
@@ -173,19 +173,19 @@
       "id": 31,
       "links": [
         {
-          "dashboard": "Per Server",
+          "dashboard": "PerServer",
           "keepTime": true,
           "params": "var-server=$server",
           "targetBlank": true,
           "title": "Details",
           "type": "dashboard",
-          "url": "/d/8WDSH98iz/per-server"
+          "url": "/d/8WDSH98iz/perserver"
         }
       ],
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -209,19 +209,19 @@
       "id": 32,
       "links": [
         {
-          "dashboard": "Per Server",
+          "dashboard": "PerServer",
           "keepTime": true,
           "params": "var-server=$server",
           "targetBlank": true,
           "title": "Details",
           "type": "dashboard",
-          "url": "/d/8WDSH98iz/per-server"
+          "url": "/d/8WDSH98iz/perserver"
         }
       ],
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -359,7 +359,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 6,
       "scopedVars": {
         "server": {
@@ -454,7 +454,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 6,
       "scopedVars": {
         "server": {
@@ -643,7 +643,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 8,
       "scopedVars": {
         "server": {
@@ -739,7 +739,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 8,
       "scopedVars": {
         "server": {
@@ -928,7 +928,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 4,
       "scopedVars": {
         "server": {
@@ -1023,7 +1023,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 4,
       "scopedVars": {
         "server": {
@@ -1226,7 +1226,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 2,
       "scopedVars": {
         "server": {
@@ -1336,7 +1336,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1547049823504,
+      "repeatIteration": 1547631861576,
       "repeatPanelId": 2,
       "scopedVars": {
         "server": {
@@ -1480,5 +1480,5 @@
   "timezone": "",
   "title": "PowerGraphs",
   "uid": "vRzNSiEik",
-  "version": 77
+  "version": 78
 }
