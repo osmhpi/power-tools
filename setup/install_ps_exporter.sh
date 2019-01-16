@@ -5,6 +5,9 @@ set -e
 # Create user
 id -u node_exporter &>/dev/null || useradd --no-create-home --shell /bin/false node_exporter
 
+# Required for add-apt-repository
+apt-get install -y software-properties-common
+
 # install go
 add-apt-repository -y ppa:longsleep/golang-backports
 apt-get update
