@@ -1,5 +1,8 @@
+#!/usr/bin/env bash
+
 set -e
 
+# Create user
 id -u node_exporter &>/dev/null || useradd --no-create-home --shell /bin/false node_exporter
 
 # install go
@@ -18,6 +21,7 @@ cp ./systemd/ps_exporter.service /etc/systemd/system/
 
 # Start service
 systemctl daemon-reload
+systemctl enable ps_exporter
 systemctl start ps_exporter
 
 # Log service status
