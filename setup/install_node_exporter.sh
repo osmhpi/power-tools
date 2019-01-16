@@ -8,6 +8,11 @@ apt-get -y install curl tar
 # Create user
 id -u node_exporter &>/dev/null || useradd --no-create-home --shell /bin/false node_exporter
 
+if (systemctl -q is-active node_exporter)
+    then
+    systemctl stop node_exporter
+fi
+
 # Download and install
 (cd /tmp && curl -LO https://github.com/prometheus/node_exporter/releases/download/v0.15.1/node_exporter-0.15.1.linux-amd64.tar.gz)
 tar xvf /tmp/node_exporter-0.15.1.linux-amd64.tar.gz -C /tmp

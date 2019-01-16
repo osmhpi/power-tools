@@ -5,6 +5,11 @@ set -e
 # Install dependencies
 apt-get -y install freeipmi
 
+if (systemctl -q is-active ipmi_exporter)
+    then
+    systemctl stop ipmi_exporter
+fi
+
 # Copy scripts
 mkdir -p /usr/local/ipmi_exporter
 cp ./ipmi_exporter/* /usr/local/ipmi_exporter

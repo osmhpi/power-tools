@@ -14,6 +14,11 @@ apt-get install -y software-properties-common
 add-apt-repository -y ppa:longsleep/golang-backports
 apt-get install -y golang-go
 
+if (systemctl -q is-active ps_exporter)
+    then
+    systemctl stop ps_exporter
+fi
+
 # Service
 mkdir -p /usr/local/ps_exporter
 cp ./ps_exporter/ps_exporter.sh /usr/local/ps_exporter
