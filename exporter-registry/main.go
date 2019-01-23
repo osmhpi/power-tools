@@ -33,12 +33,17 @@ var port *int
 var serviceFile *string
 
 func main() {
-	port = flag.Int("port", 9095, "Port used for the registry service")
+	port = flag.Int("port", 7249, "Port used for the registry service")
 	serviceFile = flag.String("out", "./target.json", "Exporter target file location")
 	flag.Parse()
 	log.Printf("Running on port %d. Registered nodes are stored in %s", *port, *serviceFile)
 	http.HandleFunc("/register", registerNode)
+	http.HandleFunc("/broadcast", acceptBroadcast)
 	http.ListenAndServe(":"+strconv.Itoa(*port), nil)
+}
+
+func acceptBroadcast(w http.ResponseWriter, req *http.Request) {
+	fmt.Fprintf(w, "exporter-registry")
 }
 
 func registerNode(w http.ResponseWriter, req *http.Request) {
