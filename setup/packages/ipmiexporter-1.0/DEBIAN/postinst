@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+systemctl daemon-reload
+systemctl enable ipmi_exporter
+systemctl start ipmi_exporter

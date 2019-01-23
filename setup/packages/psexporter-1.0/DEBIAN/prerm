@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+if (systemctl -q is-active ps_exporter)
+    then
+    systemctl stop ps_exporter
+fi

@@ -1,0 +1,7 @@
+Package: psexporter
+Version: 1.0
+Section: base
+Priority: optional
+Architecture: all
+Maintainer: Fabian Paul <fabian.paul@student.hpi.de>
+Description: Prometheus process stats exporter

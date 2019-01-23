@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+systemctl daemon-reload
+systemctl enable node_exporter
+systemctl start node_exporter

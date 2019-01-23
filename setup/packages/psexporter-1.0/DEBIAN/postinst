@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+systemctl daemon-reload
+systemctl enable ps_exporter
+systemctl start ps_exporter
