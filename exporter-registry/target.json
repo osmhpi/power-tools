@@ -1,1 +1,0 @@
-[{"targets":null,"labels":null},{"targets":null,"labels":null},{"targets":null,"labels":null},{"targets":["::1:123"],"labels":[{"name":"ipmi_exporter"}]},{"targets":["::1:1234"],"labels":[{"name":"ps_exporter"}]},{"targets":["::1:12345"],"labels":[{"name":"node_exporter"}]}]

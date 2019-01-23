@@ -1,14 +1,12 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"github.com/hpi-power-rangers/power-tools/exporter-registry/targets"
 	"log"
 	"net"
 	"net/http"
-	"os"
 	"strconv"
 )
 
@@ -16,13 +14,17 @@ const ipmiParam = "ipmi"
 const psParam = "ps"
 const nodeParam = "node"
 
+const ipmiTargetLabel = "ipmi_exporter"
+const psTargetLabel = "ps_exporter"
+const nodeTargetLabel = "node_exporter"
+
 // Label json field
 type Label struct {
 	Name string `json:"name"`
 }
 
-// Target json field
-type Target struct {
+// Exporter json field
+type Exporter struct {
 	Targets []string `json:"targets"`
 	Labels  []Label  `json:"labels"`
 }
@@ -33,8 +35,8 @@ var serviceFile *string
 func main() {
 	port = flag.Int("port", 9095, "Port used for the registry service")
 	serviceFile = flag.String("out", "./target.json", "Exporter target file location")
-
-	log.Printf("Running on port %d", *port)
+	flag.Parse()
+	log.Printf("Running on port %d. Registered nodes are stored in %s", *port, *serviceFile)
 	http.HandleFunc("/register", registerNode)
 	http.ListenAndServe(":"+strconv.Itoa(*port), nil)
 }
@@ -51,10 +53,25 @@ func registerNode(w http.ResponseWriter, req *http.Request) {
 	nodeParam, nodeErr := getServicePort(req, nodeParam)
 	if ipmiErr != nil || psErr != nil || nodeErr != nil {
 		http.Error(w, "Invalid remote address format", http.StatusBadRequest)
-		log.Printf("Error: Error parsing url params\n")
+		log.Printf("Error parsing url params\n")
 		return
 	}
-	appendToFile(*serviceFile, host, ipmiParam, psParam, nodeParam)
+	if err = targets.RegisterTarget(ipmiTargetLabel, host, ipmiParam, *serviceFile); err != nil {
+		http.Error(w, "Error registering target", http.StatusInternalServerError)
+		log.Printf("Error registering target: %s\n", err)
+		return
+	}
+	if err = targets.RegisterTarget(psTargetLabel, host, psParam, *serviceFile); err != nil {
+		http.Error(w, "Error registering target", http.StatusInternalServerError)
+		log.Printf("Error registering target: %s\n", err)
+		return
+	}
+	if err = targets.RegisterTarget(nodeTargetLabel, host, nodeParam, *serviceFile); err != nil {
+		http.Error(w, "Error registering target", http.StatusInternalServerError)
+		log.Printf("Error registering target: %s\n", err)
+		return
+	}
+	log.Printf("Registered node %s with ports: ipmi:%d, ps:%d, node:%d\n", host, ipmiParam, psParam, nodeParam)
 }
 
 func getServicePort(req *http.Request, key string) (int, error) {
@@ -67,46 +84,4 @@ func getServicePort(req *http.Request, key string) (int, error) {
 		return -1, fmt.Errorf("Port %s is not numeric", keys[0])
 	}
 	return port, nil
-}
-
-func appendToFile(filename string, host string, ipmiPort int, psPort int, nodePort int) {
-	if _, err := os.Stat(filename); os.IsNotExist(err) {
-		os.Create(filename)
-		ioutil.WriteFile(filename, []byte("[]"), 0644)
-	}
-	data, readErr := ioutil.ReadFile(filename)
-	if readErr != nil {
-		log.Printf("Error decoding json: %s\n", readErr)
-		return
-	}
-	var targets []Target
-	decodeErr := json.Unmarshal([]byte(data), &targets)
-	if decodeErr != nil {
-		log.Printf("Error decoding json: %s\n", decodeErr)
-		return
-	}
-	ipmiTarget := Target{
-		Targets: []string{host + ":" + strconv.Itoa(ipmiPort)},
-		Labels:  []Label{Label{Name: "ipmi_exporter"}},
-	}
-	psTarget := Target{
-		Targets: []string{host + ":" + strconv.Itoa(psPort)},
-		Labels:  []Label{Label{Name: "ps_exporter"}},
-	}
-	nodeTarget := Target{
-		Targets: []string{host + ":" + strconv.Itoa(nodePort)},
-		Labels:  []Label{Label{Name: "node_exporter"}},
-	}
-	targets = append(targets, ipmiTarget, psTarget, nodeTarget)
-	log.Printf("Targets: %s\n", targets)
-	targetsJSON, encodeErr := json.Marshal(targets)
-	if encodeErr != nil {
-		log.Printf("Error encoding json: %s\n", encodeErr)
-		return
-	}
-	writeErr := ioutil.WriteFile(filename, targetsJSON, 0644)
-	if writeErr != nil {
-		log.Printf("Error writing json: %s\n", writeErr)
-		return
-	}
 }
