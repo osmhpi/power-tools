@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Create user and directories
+useradd --no-create-home --shell /bin/false prometheus
+mkdir -p /etc/prometheus
+mkdir -p /var/lib/prometheus
+chown prometheus:prometheus /etc/prometheus
+chown prometheus:prometheus /var/lib/prometheus
+
+# Download prometheus
+cd /tmp
+curl -LO https://github.com/prometheus/prometheus/releases/download/v2.6.1/prometheus-2.6.1.linux-amd64.tar.gz > /tmp/prometheus.tar.gz
+
+# Install prometheus
+tar xvf /tmp/prometheus.tar.gz
+cp /tmp/prometheus-2.6.1.linux-amd64/prometheus /usr/local/bin/
+cp /tmp/prometheus-2.6.1.linux-amd64/promtool /usr/local/bin/
+chown prometheus:prometheus /usr/local/bin/prometheus
+chown prometheus:prometheus /usr/local/bin/promtool
+cp -r /tmp/prometheus-2.6.1.linux-amd64/consoles /etc/prometheus
+cp -r /tmp/prometheus-2.6.1.linux-amd64/console_libraries /etc/prometheus
+chown -R prometheus:prometheus /etc/prometheus/consoles
+chown -R prometheus:prometheus /etc/prometheus/console_libraries
+
+# Start prometheus
+systemctl daemon-reload
+systemctl start prometheus
+systemctl enable prometheus

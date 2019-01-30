@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if (systemctl -q is-active prometheus)
+    then
+    systemctl stop prometheus
+fi
+

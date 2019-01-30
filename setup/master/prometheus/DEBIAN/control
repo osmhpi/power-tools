@@ -1,0 +1,8 @@
+Package: prometheus
+Version: 1.0
+Section: base
+Priority: optional
+Depends: curl
+Architecture: all
+Maintainer: Fabian Paul <fabian.paul@student.hpi.de>
+Description: Prometheus Server
