@@ -1,8 +1,8 @@
-Package: nodeexporter
+Package: psexporter
 Version: 1.0
 Section: base
 Priority: optional
 Architecture: all
-Depends: curl, tar
+Depends: nmap
 Maintainer: Fabian Paul <fabian.paul@student.hpi.de>
-Description: Prometheus node exporter
+Description: Prometheus process stats exporter
