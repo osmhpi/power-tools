@@ -13,14 +13,6 @@ import (
 const labelParam = "label"
 const portParam = "port"
 
-const ipmiParam = "ipmi"
-const psParam = "ps"
-const nodeParam = "node"
-
-const ipmiTargetLabel = "ipmi_exporter"
-const psTargetLabel = "ps_exporter"
-const nodeTargetLabel = "node_exporter"
-
 // Label json field
 type Label struct {
 	Name string `json:"name"`
@@ -42,7 +34,7 @@ func main() {
 	log.Printf("Running on port %d. Registered nodes are stored in %s", *port, *serviceFile)
 	http.HandleFunc("/register", registerNode)
 	http.HandleFunc("/broadcast", acceptBroadcast)
-	http.ListenAndServe(":"+strconv.Itoa(*port), nil)
+	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(*port), nil))
 }
 
 func acceptBroadcast(w http.ResponseWriter, req *http.Request) {
