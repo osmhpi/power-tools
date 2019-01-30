@@ -5,7 +5,10 @@ import (
 	"io/ioutil"
 	"os"
 	"strconv"
+	"sync"
 )
+
+var fileLock sync.Mutex
 
 // Label json field
 type Label struct {
@@ -20,6 +23,8 @@ type Exporter struct {
 
 // RegisterTarget registers a new target
 func RegisterTarget(label string, host string, port int, filepath string) error {
+	fileLock.Lock()
+	defer fileLock.Unlock()
 	target := host + ":" + strconv.Itoa(port)
 	exporters, loadErr := loadExporterJSON(filepath)
 	if loadErr != nil {
