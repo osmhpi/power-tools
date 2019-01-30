@@ -18,7 +18,7 @@ type Label struct {
 // Exporter json field
 type Exporter struct {
 	Targets []string `json:"targets"`
-	Labels  []Label  `json:"labels"`
+	Labels  Label    `json:"labels"`
 }
 
 // RegisterTarget registers a new target
@@ -40,16 +40,14 @@ func RegisterTarget(label string, host string, port int, filepath string) error 
 
 func addTarget(exporters []Exporter, newTarget string, newLabel string) []Exporter {
 	for i, exporter := range exporters {
-		for _, label := range exporter.Labels {
-			if label.Name == newLabel {
-				exporters[i] = extendExporter(exporter, newTarget)
-				return exporters
-			}
+		if exporter.Labels.Name == newLabel {
+			exporters[i] = extendExporter(exporter, newTarget)
+			return exporters
 		}
 	}
 	newExporter := Exporter{
 		Targets: []string{newTarget},
-		Labels:  []Label{Label{Name: newLabel}},
+		Labels:  Label{Name: newLabel},
 	}
 	return append(exporters, newExporter)
 }
