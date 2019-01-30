@@ -10,6 +10,9 @@ import (
 	"strconv"
 )
 
+const labelParam = "label"
+const portParam = "port"
+
 const ipmiParam = "ipmi"
 const psParam = "ps"
 const nodeParam = "node"
@@ -53,40 +56,43 @@ func registerNode(w http.ResponseWriter, req *http.Request) {
 		log.Printf("Error: Remote address '%s' has invalid format", err)
 		return
 	}
-	ipmiParam, ipmiErr := getServicePort(req, ipmiParam)
-	psParam, psErr := getServicePort(req, psParam)
-	nodeParam, nodeErr := getServicePort(req, nodeParam)
-	if ipmiErr != nil || psErr != nil || nodeErr != nil {
-		http.Error(w, "Invalid remote address format", http.StatusBadRequest)
-		log.Printf("Error parsing url params\n")
+	label, labelErr := getLabel(req)
+	if labelErr != nil {
+		http.Error(w, "Invalid url params", http.StatusBadRequest)
+		log.Printf("Error parsing url params: %s\n", labelErr)
 		return
 	}
-	if err = targets.RegisterTarget(ipmiTargetLabel, host, ipmiParam, *serviceFile); err != nil {
+	port, portErr := getServicePort(req)
+	if portErr != nil {
+		http.Error(w, "Invalid url params", http.StatusBadRequest)
+		log.Printf("Error parsing url params: %s\n", portErr)
+		return
+	}
+
+	if err = targets.RegisterTarget(label, host, port, *serviceFile); err != nil {
 		http.Error(w, "Error registering target", http.StatusInternalServerError)
 		log.Printf("Error registering target: %s\n", err)
 		return
 	}
-	if err = targets.RegisterTarget(psTargetLabel, host, psParam, *serviceFile); err != nil {
-		http.Error(w, "Error registering target", http.StatusInternalServerError)
-		log.Printf("Error registering target: %s\n", err)
-		return
-	}
-	if err = targets.RegisterTarget(nodeTargetLabel, host, nodeParam, *serviceFile); err != nil {
-		http.Error(w, "Error registering target", http.StatusInternalServerError)
-		log.Printf("Error registering target: %s\n", err)
-		return
-	}
-	log.Printf("Registered node %s with ports: ipmi:%d, ps:%d, node:%d\n", host, ipmiParam, psParam, nodeParam)
+	log.Printf("Registered nod with: label: %s, host: %s, port: %d\n", label, host, port)
 }
 
-func getServicePort(req *http.Request, key string) (int, error) {
-	keys, ok := req.URL.Query()[key]
+func getServicePort(req *http.Request) (int, error) {
+	keys, ok := req.URL.Query()[portParam]
 	if !ok || len(keys) != 1 {
-		return -1, fmt.Errorf("Key %s not found in url params", key)
+		return -1, fmt.Errorf("Param %s not found", portParam)
 	}
 	port, err := strconv.Atoi(keys[0])
 	if err != nil {
 		return -1, fmt.Errorf("Port %s is not numeric", keys[0])
 	}
 	return port, nil
+}
+
+func getLabel(req *http.Request) (string, error) {
+	keys, ok := req.URL.Query()[labelParam]
+	if !ok || len(keys) != 1 {
+		return "", fmt.Errorf("Param %s not found", labelParam)
+	}
+	return keys[0], nil
 }
