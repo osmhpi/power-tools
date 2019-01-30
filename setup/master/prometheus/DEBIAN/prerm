@@ -4,5 +4,3 @@ if (systemctl -q is-active prometheus)
     then
     systemctl stop prometheus
 fi
-
-rm -r /etc/prometheus /usr/local/bin/*prometheus*
