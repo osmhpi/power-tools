@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1547647146457,
+  "iteration": 1549446894142,
   "links": [],
   "panels": [
     {
@@ -73,7 +73,7 @@
         {
           "expr": "(label_replace(ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}, \"ip\", \"$1\", \"instance\", \"(.*):.+\") - $power_base)\n  * \n  on(ip) \n  group_right() \n(\n  clamp_max( \n    ( \n      sum( \n        label_replace(cpup{instance=~\"$server:.+\"}, \"ip\", \"$1\", \"instance\", \"(.*):.+\")\n      ) by (user, ip)\n      / $cpu_nodes\n    ), 100\n  ) \n  / 100\n)",
           "format": "time_series",
-          "intervalFactor": 1,
+          "intervalFactor": 10,
           "legendFormat": "{{user}}",
           "refId": "A"
         }
@@ -241,7 +241,7 @@
         {
           "expr": "clamp_max(sum (cpup{instance=~\"$server:.+\"}) by (user) / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})), 100)",
           "format": "time_series",
-          "intervalFactor": 1,
+          "intervalFactor": 10,
           "legendFormat": "{{user}}",
           "refId": "A"
         }
@@ -656,8 +656,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "86",
-          "value": "86"
+          "text": "84",
+          "value": "84"
         },
         "datasource": "Prometheus",
         "definition": "query_result(min_over_time(ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}[1y]))",
@@ -706,7 +706,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -737,5 +737,5 @@
   "timezone": "",
   "title": "PerServer",
   "uid": "8WDSH98iz",
-  "version": 29
+  "version": 30
 }
