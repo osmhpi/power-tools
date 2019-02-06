@@ -1,8 +1,12 @@
-#!/bin/sh
-export PORT=7249
+#!/usr/bin/env bash
+export REGISTRY_PORT=7249
 LABEL="node_exporter"
-EXPORTER_PORT=9100
-masterIp=$(nmap -oG - -p$PORT "$(hostname -I)"/24 | grep open | awk '{print $2}' | xargs -I '{}' sh -c 'echo "{} $(curl -s http://{}:$PORT/broadcast)"' | grep "exporter-registry" | awk '{print $1}')
+
+PORT=9100
+
+masterIp=$(nmap -oG - -p$REGISTRY_PORT "$(hostname -I)"/24 | grep open | awk '{print $2}' | xargs -I '{}' sh -c 'echo "{} $(curl -s http://{}:$REGISTRY_PORT/broadcast)"' | grep "exporter-registry" | awk '{print $1}')
 echo $masterIp
-curl "${masterIp}:${PORT}/register?label=${LABEL}&port=${EXPORTER_PORT}"
-/usr/local/bin/node_exporter
+curl "${masterIp}:${REGISTRY_PORT}/register?label=${LABEL}&port=${PORT}"
+
+source /usr/local/node_exporter/node_exporter.env
+/usr/local/bin/node_exporter --web.listen-address=":${PORT}"
