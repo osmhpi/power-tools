@@ -2,11 +2,18 @@ version: '3'
 services:
     prometheus:
       image: prom/prometheus
+      volumes:
+        - data-volume:/config
+        - ../master/prometheus/etc/prometheus:/etc/prometheus
+      ports:
+        - "9090:9090"
     registry-service:
       build:
           context: ../../exporter-registry/
       ports:
         - "7249:7249"
+      volumes:
+        - data-volume:/config
     grafana:
       image: grafana/grafana
       ports:
@@ -14,5 +21,9 @@ services:
       volumes:
         - ./grafana/provisioning:/etc/grafana/provisioning
         - ./grafana/dashboards:/etc/grafana/dashboards
+
+
+volumes:
+  data-volume:
 
 

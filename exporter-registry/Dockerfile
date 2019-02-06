@@ -1,6 +1,7 @@
 FROM golang
-RUN mkdir /app 
-ADD . /app/ 
-WORKDIR /app 
-RUN go build -o main . 
-CMD ["/app/main"]
+RUN mkdir /app
+RUN mkdir /config
+ADD . /app/
+WORKDIR /app
+RUN go build -o main .
+CMD ["/app/main", "-out", "/config/target.json"]

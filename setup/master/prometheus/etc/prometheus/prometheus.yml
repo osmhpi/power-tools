@@ -5,4 +5,4 @@ scrape_configs:
   - job_name: 'dummy'  # This is a default value, it is mandatory.
     file_sd_configs:
     - files:
-      - targets.json
+      - /config/target.json
