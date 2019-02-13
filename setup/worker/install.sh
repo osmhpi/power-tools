@@ -10,6 +10,6 @@ apt remove -y psexporter
 apt remove -y nodeexporter
 apt remove -y ipmiexporter
 
-apt install -y -f ./psexport.deb
+apt install -y -f ./psexporter.deb
 apt install -y -f ./nodeexporter.deb
 apt install -y -f ./ipmiexporter.deb
