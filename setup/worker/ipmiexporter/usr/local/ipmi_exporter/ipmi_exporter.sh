@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 export REGISTRY_PORT=7249
-LABEL="ps_exporter"
+LABEL="ipmi_exporter"
 
 PORT=9290
 
