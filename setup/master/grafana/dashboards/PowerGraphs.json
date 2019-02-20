@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1550681837938,
+  "iteration": 1550682861245,
   "links": [],
   "panels": [
     {
@@ -149,7 +149,7 @@
       ],
       "mode": "html",
       "repeat": "server",
-      "repeatDirection": "h",
+      "repeatDirection": "v",
       "scopedVars": {
         "server": {
           "selected": false,
@@ -184,7 +184,7 @@
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -220,7 +220,7 @@
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -256,7 +256,7 @@
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -292,7 +292,7 @@
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -328,7 +328,7 @@
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -364,7 +364,7 @@
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -400,7 +400,7 @@
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -436,7 +436,7 @@
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -472,7 +472,7 @@
       "mode": "html",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 18,
       "scopedVars": {
         "server": {
@@ -484,196 +484,6 @@
       "title": "Server IP",
       "transparent": true,
       "type": "text"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 12,
-        "y": 10
-      },
-      "id": 41,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 6,
-      "scopedVars": {
-        "server": {
-          "selected": false,
-          "text": "192.168.42.167",
-          "value": "192.168.42.167"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Power Consumption (IPMI)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "watt",
-          "label": null,
-          "logBase": 1,
-          "max": "1000",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 10
-      },
-      "id": 42,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 6,
-      "scopedVars": {
-        "server": {
-          "selected": false,
-          "text": "192.168.42.168",
-          "value": "192.168.42.168"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Power Consumption (IPMI)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "watt",
-          "label": null,
-          "logBase": 1,
-          "max": "1000",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     },
     {
       "aliasColors": {},
@@ -777,8 +587,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 12
+        "x": 0,
+        "y": 21
       },
       "id": 40,
       "legend": {
@@ -799,8 +609,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 6,
       "scopedVars": {
         "server": {
@@ -872,10 +682,10 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 12,
-        "y": 19
+        "x": 0,
+        "y": 30
       },
-      "id": 45,
+      "id": 41,
       "legend": {
         "avg": false,
         "current": false,
@@ -894,14 +704,14 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 6,
       "scopedVars": {
         "server": {
           "selected": false,
-          "text": "192.168.42.56",
-          "value": "192.168.42.56"
+          "text": "192.168.42.167",
+          "value": "192.168.42.167"
         }
       },
       "seriesOverrides": [],
@@ -967,10 +777,10 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 18,
-        "y": 19
+        "x": 0,
+        "y": 39
       },
-      "id": 51,
+      "id": 42,
       "legend": {
         "avg": false,
         "current": false,
@@ -989,9 +799,9 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 8,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 6,
       "scopedVars": {
         "server": {
           "selected": false,
@@ -1005,9 +815,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_load1{instance=~\"$server:.+\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})) * 100",
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}",
           "format": "time_series",
-          "hide": false,
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -1017,7 +826,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU Load",
+      "title": "Power Consumption (IPMI)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1033,10 +842,10 @@
       },
       "yaxes": [
         {
-          "format": "percent",
+          "format": "watt",
           "label": null,
           "logBase": 1,
-          "max": "100",
+          "max": "1000",
           "min": "0",
           "show": true
         },
@@ -1064,7 +873,7 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 21
+        "y": 48
       },
       "id": 43,
       "legend": {
@@ -1085,8 +894,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 6,
       "scopedVars": {
         "server": {
@@ -1158,8 +967,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 21
+        "x": 0,
+        "y": 57
       },
       "id": 44,
       "legend": {
@@ -1180,8 +989,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 6,
       "scopedVars": {
         "server": {
@@ -1253,10 +1062,10 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 12,
-        "y": 28
+        "x": 0,
+        "y": 66
       },
-      "id": 50,
+      "id": 45,
       "legend": {
         "avg": false,
         "current": false,
@@ -1275,14 +1084,14 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 8,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 6,
       "scopedVars": {
         "server": {
           "selected": false,
-          "text": "192.168.42.167",
-          "value": "192.168.42.167"
+          "text": "192.168.42.56",
+          "value": "192.168.42.56"
         }
       },
       "seriesOverrides": [],
@@ -1291,9 +1100,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_load1{instance=~\"$server:.+\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})) * 100",
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=~\"$server:.+\"}",
           "format": "time_series",
-          "hide": false,
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -1303,7 +1111,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU Load",
+      "title": "Power Consumption (IPMI)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1319,10 +1127,10 @@
       },
       "yaxes": [
         {
-          "format": "percent",
+          "format": "watt",
           "label": null,
           "logBase": 1,
-          "max": "100",
+          "max": "1000",
           "min": "0",
           "show": true
         },
@@ -1349,8 +1157,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 18,
-        "y": 28
+        "x": 0,
+        "y": 75
       },
       "id": 46,
       "legend": {
@@ -1371,8 +1179,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 6,
       "scopedVars": {
         "server": {
@@ -1445,7 +1253,7 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 30
+        "y": 84
       },
       "id": 47,
       "legend": {
@@ -1466,8 +1274,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 6,
       "scopedVars": {
         "server": {
@@ -1539,8 +1347,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 30
+        "x": 0,
+        "y": 93
       },
       "id": 48,
       "legend": {
@@ -1561,8 +1369,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 6,
       "scopedVars": {
         "server": {
@@ -1634,200 +1442,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 12,
-        "y": 37
-      },
-      "id": 54,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 8,
-      "scopedVars": {
-        "server": {
-          "selected": false,
-          "text": "192.168.42.56",
-          "value": "192.168.42.56"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "node_load1{instance=~\"$server:.+\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})) * 100",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "CPU Load",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "percent",
-          "label": null,
-          "logBase": 1,
-          "max": "100",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 37
-      },
-      "id": 55,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 8,
-      "scopedVars": {
-        "server": {
-          "selected": false,
-          "text": "192.168.42.83",
-          "value": "192.168.42.83"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "node_load1{instance=~\"$server:.+\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})) * 100",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "CPU Load",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "percent",
-          "label": null,
-          "logBase": 1,
-          "max": "100",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
         "x": 0,
-        "y": 39
+        "y": 102
       },
       "id": 8,
       "legend": {
@@ -1920,8 +1536,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 39
+        "x": 0,
+        "y": 111
       },
       "id": 49,
       "legend": {
@@ -1942,8 +1558,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 8,
       "scopedVars": {
         "server": {
@@ -2016,10 +1632,10 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 12,
-        "y": 46
+        "x": 0,
+        "y": 120
       },
-      "id": 59,
+      "id": 50,
       "legend": {
         "avg": false,
         "current": false,
@@ -2038,9 +1654,9 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 4,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 8,
       "scopedVars": {
         "server": {
           "selected": false,
@@ -2054,8 +1670,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
+          "expr": "node_load1{instance=~\"$server:.+\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})) * 100",
           "format": "time_series",
+          "hide": false,
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -2065,7 +1682,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Average CPU Clock Frequency",
+      "title": "CPU Load",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2081,105 +1698,10 @@
       },
       "yaxes": [
         {
-          "format": "hertz",
+          "format": "percent",
           "label": null,
           "logBase": 1,
-          "max": "3500000000",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 46
-      },
-      "id": 60,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 4,
-      "scopedVars": {
-        "server": {
-          "selected": false,
-          "text": "192.168.42.168",
-          "value": "192.168.42.168"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Average CPU Clock Frequency",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "hertz",
-          "label": null,
-          "logBase": 1,
-          "max": "3500000000",
+          "max": "100",
           "min": "0",
           "show": true
         },
@@ -2207,7 +1729,103 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 48
+        "y": 129
+      },
+      "id": 51,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 8,
+      "scopedVars": {
+        "server": {
+          "selected": false,
+          "text": "192.168.42.168",
+          "value": "192.168.42.168"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "node_load1{instance=~\"$server:.+\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})) * 100",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Load",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 138
       },
       "id": 52,
       "legend": {
@@ -2228,8 +1846,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 8,
       "scopedVars": {
         "server": {
@@ -2302,8 +1920,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 48
+        "x": 0,
+        "y": 147
       },
       "id": 53,
       "legend": {
@@ -2324,8 +1942,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 8,
       "scopedVars": {
         "server": {
@@ -2398,10 +2016,10 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 12,
-        "y": 55
+        "x": 0,
+        "y": 156
       },
-      "id": 63,
+      "id": 54,
       "legend": {
         "avg": false,
         "current": false,
@@ -2420,9 +2038,9 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 4,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 8,
       "scopedVars": {
         "server": {
           "selected": false,
@@ -2436,8 +2054,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
+          "expr": "node_load1{instance=~\"$server:.+\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})) * 100",
           "format": "time_series",
+          "hide": false,
           "intervalFactor": 1,
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -2447,7 +2066,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Average CPU Clock Frequency",
+      "title": "CPU Load",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2463,105 +2082,10 @@
       },
       "yaxes": [
         {
-          "format": "hertz",
+          "format": "percent",
           "label": null,
           "logBase": 1,
-          "max": "3500000000",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 55
-      },
-      "id": 64,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 4,
-      "scopedVars": {
-        "server": {
-          "selected": false,
-          "text": "192.168.42.83",
-          "value": "192.168.42.83"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Average CPU Clock Frequency",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "hertz",
-          "label": null,
-          "logBase": 1,
-          "max": "3500000000",
+          "max": "100",
           "min": "0",
           "show": true
         },
@@ -2589,7 +2113,103 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 57
+        "y": 165
+      },
+      "id": 55,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 8,
+      "scopedVars": {
+        "server": {
+          "selected": false,
+          "text": "192.168.42.83",
+          "value": "192.168.42.83"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "node_load1{instance=~\"$server:.+\"} / scalar(count(node_cpu_frequency_hertz{instance=~\"$server:.+\"})) * 100",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Load",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 174
       },
       "id": 56,
       "legend": {
@@ -2610,8 +2230,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 8,
       "scopedVars": {
         "server": {
@@ -2684,8 +2304,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 57
+        "x": 0,
+        "y": 183
       },
       "id": 57,
       "legend": {
@@ -2706,8 +2326,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 8,
       "scopedVars": {
         "server": {
@@ -2780,228 +2400,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 12,
-        "y": 64
-      },
-      "id": 68,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "server": {
-          "selected": false,
-          "text": "192.168.42.167",
-          "value": "192.168.42.167"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "Min Temp",
-          "refId": "A"
-        },
-        {
-          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Avg Temp",
-          "refId": "B"
-        },
-        {
-          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "Max Temp",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "CPU Temperature",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "celsius",
-          "label": null,
-          "logBase": 1,
-          "max": "100",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 64
-      },
-      "id": 69,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "server": {
-          "selected": false,
-          "text": "192.168.42.168",
-          "value": "192.168.42.168"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "Min Temp",
-          "refId": "A"
-        },
-        {
-          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Avg Temp",
-          "refId": "B"
-        },
-        {
-          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "Max Temp",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "CPU Temperature",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "celsius",
-          "label": null,
-          "logBase": 1,
-          "max": "100",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
         "x": 0,
-        "y": 66
+        "y": 192
       },
       "id": 4,
       "legend": {
@@ -3093,8 +2493,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 66
+        "x": 0,
+        "y": 201
       },
       "id": 58,
       "legend": {
@@ -3115,8 +2515,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 4,
       "scopedVars": {
         "server": {
@@ -3188,10 +2588,10 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 12,
-        "y": 73
+        "x": 0,
+        "y": 210
       },
-      "id": 72,
+      "id": 59,
       "legend": {
         "avg": false,
         "current": false,
@@ -3210,14 +2610,14 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 2,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 4,
       "scopedVars": {
         "server": {
           "selected": false,
-          "text": "192.168.42.56",
-          "value": "192.168.42.56"
+          "text": "192.168.42.167",
+          "value": "192.168.42.167"
         }
       },
       "seriesOverrides": [],
@@ -3226,33 +2626,18 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "Min Temp",
+          "legendFormat": "{{instance}}",
           "refId": "A"
-        },
-        {
-          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Avg Temp",
-          "refId": "B"
-        },
-        {
-          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "Max Temp",
-          "refId": "C"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU Temperature",
+      "title": "Average CPU Clock Frequency",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -3268,120 +2653,10 @@
       },
       "yaxes": [
         {
-          "format": "celsius",
+          "format": "hertz",
           "label": null,
           "logBase": 1,
-          "max": "100",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 73
-      },
-      "id": 73,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "server": {
-          "selected": false,
-          "text": "192.168.42.83",
-          "value": "192.168.42.83"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "Min Temp",
-          "refId": "A"
-        },
-        {
-          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Avg Temp",
-          "refId": "B"
-        },
-        {
-          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "Max Temp",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "CPU Temperature",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "celsius",
-          "label": null,
-          "logBase": 1,
-          "max": "100",
+          "max": "3500000000",
           "min": "0",
           "show": true
         },
@@ -3409,7 +2684,102 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 75
+        "y": 219
+      },
+      "id": 60,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "server": {
+          "selected": false,
+          "text": "192.168.42.168",
+          "value": "192.168.42.168"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Average CPU Clock Frequency",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "hertz",
+          "label": null,
+          "logBase": 1,
+          "max": "3500000000",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 228
       },
       "id": 61,
       "legend": {
@@ -3430,8 +2800,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 4,
       "scopedVars": {
         "server": {
@@ -3503,8 +2873,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 75
+        "x": 0,
+        "y": 237
       },
       "id": 62,
       "legend": {
@@ -3525,8 +2895,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 4,
       "scopedVars": {
         "server": {
@@ -3599,7 +2969,197 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 84
+        "y": 246
+      },
+      "id": 63,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "server": {
+          "selected": false,
+          "text": "192.168.42.56",
+          "value": "192.168.42.56"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Average CPU Clock Frequency",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "hertz",
+          "label": null,
+          "logBase": 1,
+          "max": "3500000000",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 255
+      },
+      "id": 64,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "server": {
+          "selected": false,
+          "text": "192.168.42.83",
+          "value": "192.168.42.83"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "avg(node_cpu_frequency_hertz{instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Average CPU Clock Frequency",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "hertz",
+          "label": null,
+          "logBase": 1,
+          "max": "3500000000",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 264
       },
       "id": 65,
       "legend": {
@@ -3620,8 +3180,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 4,
       "scopedVars": {
         "server": {
@@ -3693,8 +3253,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 84
+        "x": 0,
+        "y": 273
       },
       "id": 66,
       "legend": {
@@ -3715,8 +3275,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 4,
       "scopedVars": {
         "server": {
@@ -3789,7 +3349,7 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 93
+        "y": 282
       },
       "id": 2,
       "legend": {
@@ -3896,8 +3456,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 93
+        "x": 0,
+        "y": 291
       },
       "id": 67,
       "legend": {
@@ -3918,8 +3478,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 2,
       "scopedVars": {
         "server": {
@@ -4007,7 +3567,227 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 102
+        "y": 300
+      },
+      "id": 68,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 2,
+      "scopedVars": {
+        "server": {
+          "selected": false,
+          "text": "192.168.42.167",
+          "value": "192.168.42.167"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Min Temp",
+          "refId": "A"
+        },
+        {
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Avg Temp",
+          "refId": "B"
+        },
+        {
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Max Temp",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Temperature",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "celsius",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 309
+      },
+      "id": 69,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 2,
+      "scopedVars": {
+        "server": {
+          "selected": false,
+          "text": "192.168.42.168",
+          "value": "192.168.42.168"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Min Temp",
+          "refId": "A"
+        },
+        {
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Avg Temp",
+          "refId": "B"
+        },
+        {
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Max Temp",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Temperature",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "celsius",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 318
       },
       "id": 70,
       "legend": {
@@ -4028,8 +3808,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 2,
       "scopedVars": {
         "server": {
@@ -4116,8 +3896,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 102
+        "x": 0,
+        "y": 327
       },
       "id": 71,
       "legend": {
@@ -4138,8 +3918,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 2,
       "scopedVars": {
         "server": {
@@ -4227,7 +4007,227 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 111
+        "y": 336
+      },
+      "id": 72,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 2,
+      "scopedVars": {
+        "server": {
+          "selected": false,
+          "text": "192.168.42.56",
+          "value": "192.168.42.56"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Min Temp",
+          "refId": "A"
+        },
+        {
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Avg Temp",
+          "refId": "B"
+        },
+        {
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Max Temp",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Temperature",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "celsius",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 345
+      },
+      "id": 73,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
+      "repeatPanelId": 2,
+      "scopedVars": {
+        "server": {
+          "selected": false,
+          "text": "192.168.42.83",
+          "value": "192.168.42.83"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "min(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Min Temp",
+          "refId": "A"
+        },
+        {
+          "expr": "avg(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Avg Temp",
+          "refId": "B"
+        },
+        {
+          "expr": "max(node_hwmon_temp_celsius{chip=~'platform_coretemp.*',instance=~\"$server:.*\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Max Temp",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Temperature",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "celsius",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 354
       },
       "id": 74,
       "legend": {
@@ -4248,8 +4248,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 2,
       "scopedVars": {
         "server": {
@@ -4336,8 +4336,8 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 111
+        "x": 0,
+        "y": 363
       },
       "id": 75,
       "legend": {
@@ -4358,8 +4358,8 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1550681837938,
+      "repeatDirection": "v",
+      "repeatIteration": 1550682861245,
       "repeatPanelId": 2,
       "scopedVars": {
         "server": {
@@ -4504,5 +4504,5 @@
   "timezone": "",
   "title": "PowerGraphs",
   "uid": "vRzNSiEik",
-  "version": 1
+  "version": 2
 }
